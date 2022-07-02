@@ -25,7 +25,7 @@ app.post("/todos", async (req, res) => {
 
 app.get("/todos", async (req, res) => {
   try {
-    const allTodos = await pool.query("SELECT description FROM todo");
+    const allTodos = await pool.query("SELECT * FROM todo");
     res.json(allTodos.rows);
   } catch (err) {
     console.error(err.message);
@@ -37,10 +37,9 @@ app.get("/todos", async (req, res) => {
 app.get("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const todo = await pool.query(
-      "SELECT description FROM todo WHERE todo_id = $1",
-      [id]
-    );
+    const todo = await pool.query("SELECT * FROM todo WHERE todo_id = $1", [
+      id,
+    ]);
     res.json(todo.rows);
   } catch (err) {
     console.error(err.message);
@@ -72,6 +71,17 @@ app.delete("/todos/:id", async (req, res) => {
       id,
     ]);
     res.json("deleted you monster");
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+// delete literally everything
+
+app.delete("/obliterate", async (req, res) => {
+  try {
+    const destroyed = await pool.query("DELETE FROM todo");
+    res.json("obliterated sadge");
   } catch (err) {
     console.error(err.message);
   }
