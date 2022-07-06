@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "start": "node ./server/index.js & npm start --prefix ./client"
+    "start": "npm start --prefix ./client"
   }
 }
