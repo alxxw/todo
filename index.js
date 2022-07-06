@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
@@ -86,6 +87,13 @@ app.delete("/obliterate", async (req, res) => {
     console.error(err.message);
   }
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("/client/build"));
+  app.get("*", (req, res) => {
+    req.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(5000, () => {
   console.log("Hi guys");
