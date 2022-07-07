@@ -20,7 +20,7 @@ const InputTodo = () => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-5"> pls do this shit (soon)</h1>;
+      <h1 className="text-center mt-5"> anarchist message board </h1>;
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
           type="text"
@@ -28,7 +28,7 @@ const InputTodo = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button className="btn glow-on-hover">this is required</button>
+        <button className="btn glow-on-hover">say something</button>
       </form>
     </Fragment>
   );
