@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const DeleteAll = () => {
   const DeleteAll = async () => {
     try {
-      const reponse = await fetch("/obliterate", {
+      const reponse = await fetch("http://localhost:5000/obliterate", {
         method: "DELETE",
       });
       window.location = "/";
