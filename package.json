@@ -8,10 +8,8 @@
     "npm": "8.13.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "concurrently \"npm start\" \"npm start --prefix client\"",
-    "heroku-postbuild": "node index.js & cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
