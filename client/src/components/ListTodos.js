@@ -37,7 +37,7 @@ const ListTodos = () => {
         <thead>
           <tr>
             <th>message</th>
-            <th>change this shit</th>
+            <th>change</th>
             <th>kill</th>
           </tr>
         </thead>
