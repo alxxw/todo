@@ -21,10 +21,10 @@ const InputTodo = () => {
   return (
     <Fragment>
       <h1 className="text-center mt-5"> message board </h1>;
-      <div className="mt-3">
+      <div className="mt-5">
         all opinions expressed do not reflect the creator of the website.
       </div>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+      <form className="d-flex mt-3" onSubmit={onSubmitForm}>
         <input
           type="text"
           className="form-control"

@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "dev": "concurrently \"node index.js\" \"npm start --prefix client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
